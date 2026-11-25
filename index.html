@@ -3,8 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MidMade — Fast HD Video Saver &amp; Gesture Player</title>
-  <meta name="description" content="Download HD videos fast and enjoy a PLAYit-style gesture video player on Android." />
+
+  <!-- Primary SEO Meta Tags -->
+  <title>MidMade — Fast HD Video Saver &amp; Gesture Video Player for Android</title>
+  <meta name="title" content="MidMade — Fast HD Video Saver &amp; Gesture Video Player for Android" />
+  <meta name="description" content="Download MidMade APK for Android. Save HD social videos in one tap and enjoy a smooth PLAYit-style gesture video player with brightness, volume, zoom, and lock controls." />
+  <meta name="keywords" content="MidMade, MidMade APK, HD video saver, Android gesture video player, offline video player, fast video downloader Android, MidMade app download" />
+  <meta name="author" content="MidMade" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://midmade.pages.dev/" />
+  <meta name="theme-color" content="#0284c7" />
+
+  <!-- Browser Tab Favicon (Custom MidMade App Icon) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2306b6d4'/%3E%3Cstop offset='50%25' stop-color='%232563eb'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='120' height='120' rx='30' fill='url(%23g)'/%3E%3Cpath d='M28 84V38l32 26 32-26v46' fill='none' stroke='%23ffffff' stroke-width='11' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M60 66v24m0 0l-10-10m10 10l10-10' fill='none' stroke='%2367e8f9' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+  <!-- Open Graph / Facebook / WhatsApp / Messenger Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MidMade" />
+  <meta property="og:url" content="https://midmade.pages.dev/" />
+  <meta property="og:title" content="MidMade — Fast HD Video Saver &amp; Gesture Video Player" />
+  <meta property="og:description" content="Save HD videos offline and watch with pro touch gestures on Android. Lightweight, fast &amp; free APK." />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card SEO -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://midmade.pages.dev/" />
+  <meta name="twitter:title" content="MidMade — Fast HD Video Saver &amp; Gesture Video Player" />
+  <meta name="twitter:description" content="Save HD videos offline and watch with pro touch gestures on Android. Lightweight, fast &amp; free APK." />
+
+  <!-- Structured Data (Google Rich App Schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MidMade",
+    "operatingSystem": "Android 7.0+",
+    "applicationCategory": "MultimediaApplication",
+    "softwareVersion": "1.0.0",
+    "url": "https://midmade.pages.dev/",
+    "description": "Fast HD video saver and gesture-controlled offline media player for Android devices.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "One-tap HD video saving",
+      "Swipe gesture brightness and volume controls",
+      "Pinch-to-zoom and double-tap seek",
+      "Draggable screen lock and playlist drawer"
+    ]
+  }
+  </script>
+
   <style>
     :root {
       --glass-bg: rgba(255, 255, 255, 0.74);
@@ -120,20 +171,24 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      font-size: 1.2rem;
+      font-weight: 900;
+      font-size: 1.26rem;
+      letter-spacing: -0.01em;
       color: var(--text-main);
+      text-decoration: none;
     }
 
-    .logo-badge {
-      width: 40px;
-      height: 40px;
+    .nav-app-icon {
+      width: 42px;
+      height: 42px;
       border-radius: 12px;
-      background: linear-gradient(135deg, #06b6d4, #3b82f6, #8b5cf6);
-      display: grid;
-      place-items: center;
-      color: #ffffff;
-      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+      flex-shrink: 0;
+      box-shadow: 0 6px 16px rgba(37, 99, 235, 0.32);
+      transition: transform 0.3s ease;
+    }
+
+    .brand:hover .nav-app-icon {
+      transform: rotate(-6deg) scale(1.06);
     }
 
     .ver-pill {
@@ -141,7 +196,7 @@
       font-weight: 700;
       padding: 5px 14px;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       color: #0369a1;
       border: 1px solid rgba(6, 182, 212, 0.4);
     }
@@ -149,7 +204,7 @@
     /* Hero Section */
     .hero {
       text-align: center;
-      padding: 54px 16px 38px;
+      padding: 46px 16px 36px;
       animation: fadeSlideUp 0.75s ease both;
     }
 
@@ -202,9 +257,42 @@
       margin-inline: auto;
     }
 
+    /* Large App Icon Showcase Right Above Download Button */
+    .app-icon-showcase {
+      margin: 28px auto 18px;
+      width: 108px;
+      height: 108px;
+      padding: 6px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 2px solid rgba(255, 255, 255, 0.98);
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.25), 0 0 0 8px rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(16px);
+      display: grid;
+      place-items: center;
+      animation: iconFloat 3.4s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .app-icon-showcase:hover {
+      transform: scale(1.07) rotate(-2deg);
+    }
+
+    .app-icon-showcase svg {
+      width: 92px;
+      height: 92px;
+      border-radius: 24px;
+      display: block;
+    }
+
+    @keyframes iconFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
     /* Animated Download Button */
     .cta-wrap {
-      margin-top: 32px;
+      margin-top: 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -348,7 +436,7 @@
       transform: scale(1.1) rotate(-4deg);
     }
 
-    .card h3 {
+    .card h2 {
       font-size: 1.12rem;
       font-weight: 800;
       color: var(--text-main);
@@ -436,6 +524,35 @@
   </style>
 </head>
 <body>
+  <!-- Hidden Reusable MidMade App Icon Definition -->
+  <svg width="0" height="0" style="position:absolute;visibility:hidden;" aria-hidden="true">
+    <defs>
+      <symbol id="midmade-app-icon" viewBox="0 0 120 120">
+        <defs>
+          <linearGradient id="mmIconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#06b6d4" />
+            <stop offset="50%" stop-color="#2563eb" />
+            <stop offset="100%" stop-color="#7c3aed" />
+          </linearGradient>
+          <linearGradient id="mmGlassShine" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.34" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+          </linearGradient>
+        </defs>
+        <!-- Squircle App Base -->
+        <rect x="2" y="2" width="116" height="116" rx="28" fill="url(#mmIconBg)" />
+        <!-- Glossy Top Highlight -->
+        <path d="M2 30C2 14.5 14.5 2 30 2h60c15.5 0 28 12.5 28 28v16c-34 12-82 12-116 0V30z" fill="url(#mmGlassShine)" />
+        <!-- Inner Crisp Border -->
+        <rect x="3" y="3" width="114" height="114" rx="27" fill="none" stroke="#ffffff" stroke-opacity="0.38" stroke-width="2" />
+        <!-- Bold Stylized "M" Crest -->
+        <path d="M27 83V38l33 25 33-25v45" fill="none" stroke="#ffffff" stroke-width="10.5" stroke-linecap="round" stroke-linejoin="round" />
+        <!-- Cyan Glowing Download Arrow Center -->
+        <path d="M60 66v24m0 0l-10-10m10 10l10-10" fill="none" stroke="#67e8f9" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+    </defs>
+  </svg>
+
   <!-- Glowing Color-Shifting Orbs -->
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
@@ -443,70 +560,78 @@
 
   <div class="container">
     <header>
-      <div class="brand">
-        <div class="logo-badge">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3v13m0 0l-5-5m5 5l5-5M5 21h14"/>
-          </svg>
-        </div>
+      <a href="https://midmade.pages.dev/" class="brand" aria-label="MidMade Home">
+        <!-- App Icon Placed Right Before the Brand Name -->
+        <svg class="nav-app-icon" role="img" aria-label="MidMade App Icon">
+          <use href="#midmade-app-icon" />
+        </svg>
         <span>MidMade</span>
-      </div>
+      </a>
       <span class="ver-pill">Android • v1.0.0</span>
     </header>
 
-    <section class="hero">
-      <div class="top-tag">
-        <span class="pulse-dot"></span>
-        <span>Official Safe APK • Fast &amp; Ad-Free Ready</span>
-      </div>
-      <h1>Save HD Videos &amp; Watch with Pro Gestures</h1>
-      <p class="bn-sub">
-        যেকোনো সোশ্যাল ভিডিও লিংক থেকে দ্রুত HD ভিডিও ডাউনলোড করুন এবং বিল্ট-ইন স্মার্ট জেসচার প্লেয়ারে উপভোগ করুন।
-      </p>
+    <main>
+      <section class="hero">
+        <div class="top-tag">
+          <span class="pulse-dot"></span>
+          <span>Official Safe APK • Fast &amp; Ad-Free Ready</span>
+        </div>
+        <h1>Save HD Videos &amp; Watch with Pro Gestures</h1>
+        <p class="bn-sub">
+          যেকোনো সোশ্যাল ভিডিও লিংক থেকে দ্রুত HD ভিডিও ডাউনলোড করুন এবং বিল্ট-ইন স্মার্ট জেসচার প্লেয়ারে উপভোগ করুন।
+        </p>
 
-      <div class="cta-wrap">
-        <!-- ভবিষ্যতে GitHub Releases-এর আসল .apk লিংক নিচের href="#" এর জায়গায় বসিয়ে দেবে -->
-        <a id="apkBtn" href="#" class="btn-download" onclick="handleDownload(event)">
-          <span class="dl-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3v13m0 0l-5-5m5 5l5-5M5 21h14"/>
-            </svg>
-          </span>
-          <span id="btnLabel">Download APK (v1.0.0)</span>
-        </a>
-        <span class="meta-info">Android 7.0+ • Compact Size • Direct Install</span>
-      </div>
-    </section>
+        <!-- Larger MidMade App Icon Right Above Download Button -->
+        <div class="app-icon-showcase" title="MidMade Official Android App">
+          <svg role="img" aria-label="MidMade Official App Logo">
+            <use href="#midmade-app-icon" />
+          </svg>
+        </div>
 
-    <section class="grid">
-      <div class="card">
-        <div class="icon-box">⚡</div>
-        <h3>One-Tap HD Saver</h3>
-        <p>Paste any video link or share directly from your favorite social apps to save MP4 offline.</p>
-        <small>লিংক পেস্ট অথবা সরাসরি শেয়ার করেই হাই-কোয়ালিটি ভিডিও ডাউনলোড।</small>
-      </div>
-      <div class="card">
-        <div class="icon-box">🎬</div>
-        <h3>Gesture HD Player</h3>
-        <p>Swipe for brightness &amp; volume, pinch-to-zoom, double-tap seek, draggable lock &amp; playlist card.</p>
-        <small>আঙুলের ইশারায় ব্রাইটনেস, সাউন্ড, জুম, স্ক্রিন লক ও প্লেলিস্ট কন্ট্রোল।</small>
-      </div>
-      <div class="card">
-        <div class="icon-box">🚀</div>
-        <h3>Lightweight &amp; Smooth</h3>
-        <p>Optimized specifically for modern Android phones with minimal storage footprint.</p>
-        <small>অল্প মেমোরি ও সুপার ফাস্ট পারফরম্যান্সের জন্য বিশেষভাবে তৈরি।</small>
-      </div>
-    </section>
+        <div class="cta-wrap">
+          <!-- ভবিষ্যতে GitHub Releases-এর আসল .apk লিংক নিচের href="#" এর জায়গায় বসিয়ে দেবে -->
+          <a id="apkBtn" href="#" class="btn-download" onclick="handleDownload(event)">
+            <span class="dl-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v13m0 0l-5-5m5 5l5-5M5 21h14"/>
+              </svg>
+            </span>
+            <span id="btnLabel">Download APK (v1.0.0)</span>
+          </a>
+          <span class="meta-info">Android 7.0+ • Compact Size • Direct Install</span>
+        </div>
+      </section>
 
-    <section class="steps">
-      <h2>How to Install (ইনস্টল করার নিয়ম)</h2>
-      <ol>
-        <li>Tap <strong>Download APK</strong> above to save the installer file. (উপরের বাটনে ক্লিক করে APK ফাইলটি ডাউনলোড করুন।)</li>
-        <li>Open the downloaded file and allow <strong>"Install from unknown sources"</strong> if prompted. (ফাইলটি ওপেন করে পারমিশন চাইলে Allow দিন।)</li>
-        <li>Launch <strong>MidMade</strong> and enjoy! (অ্যাপ ওপেন করে ব্যবহার শুরু করুন।)</li>
-      </ol>
-    </section>
+      <section class="grid" aria-label="MidMade Key Features">
+        <article class="card">
+          <div class="icon-box">⚡</div>
+          <h2>One-Tap HD Saver</h2>
+          <p>Paste any video link or share directly from your favorite social apps to save MP4 offline.</p>
+          <small>লিংক পেস্ট অথবা সরাসরি শেয়ার করেই হাই-কোয়ালিটি ভিডিও ডাউনলোড।</small>
+        </article>
+        <article class="card">
+          <div class="icon-box">🎬</div>
+          <h2>Gesture HD Player</h2>
+          <p>Swipe for brightness &amp; volume, pinch-to-zoom, double-tap seek, draggable lock &amp; playlist card.</p>
+          <small>আঙুলের ইশারায় ব্রাইটনেস, সাউন্ড, জুম, স্ক্রিন লক ও প্লেলিস্ট কন্ট্রোল।</small>
+        </article>
+        <article class="card">
+          <div class="icon-box">🚀</div>
+          <h2>Lightweight &amp; Smooth</h2>
+          <p>Optimized specifically for modern Android phones with minimal storage footprint.</p>
+          <small>অল্প মেমোরি ও সুপার ফাস্ট পারফরম্যান্সের জন্য বিশেষভাবে তৈরি।</small>
+        </article>
+      </section>
+
+      <section class="steps" aria-label="Installation Guide">
+        <h2>How to Install MidMade APK (ইনস্টল করার নিয়ম)</h2>
+        <ol>
+          <li>Tap <strong>Download APK</strong> above to save the installer file. (উপরের বাটনে ক্লিক করে APK ফাইলটি ডাউনলোড করুন।)</li>
+          <li>Open the downloaded file and allow <strong>"Install from unknown sources"</strong> if prompted. (ফাইলটি ওপেন করে পারমিশন চাইলে Allow দিন।)</li>
+          <li>Launch <strong>MidMade</strong> and enjoy! (অ্যাপ ওপেন করে ব্যবহার শুরু করুন।)</li>
+        </ol>
+      </section>
+    </main>
 
     <footer>
       <p>© 2026 MidMade. All rights reserved. • Built for personal offline media playback.</p>

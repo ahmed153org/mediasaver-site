@@ -152,7 +152,7 @@
     }
 
     @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(22px); }
+      from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -162,7 +162,204 @@
       padding: 22px 18px 64px;
     }
 
-    /* Bright Frosted Glass Navbar */
+    /* =========================================================
+       YOUTUBE-STYLE LEFT-TO-RIGHT SHIMMER SKELETON LOADER
+    ========================================================= */
+    body.is-loading #realContent {
+      display: none;
+    }
+
+    body:not(.is-loading) #skeletonLoader {
+      display: none;
+    }
+
+    body:not(.is-loading) #realContent {
+      animation: fadeSlideUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .sk-bone {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.52);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+    }
+
+    /* Left-to-Right Light Sweep (YouTube Shimmer Style) */
+    .sk-bone::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 28%,
+        rgba(255, 255, 255, 0.95) 50%,
+        rgba(255, 255, 255, 0.45) 72%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: ytShimmerSweep 1.35s infinite ease-in-out;
+    }
+
+    @keyframes ytShimmerSweep {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .sk-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 22px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(18px);
+    }
+
+    .sk-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sk-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
+
+    .sk-title-sm {
+      width: 108px;
+      height: 22px;
+      border-radius: 8px;
+    }
+
+    .sk-pill {
+      width: 118px;
+      height: 28px;
+      border-radius: 999px;
+    }
+
+    .sk-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 46px 16px 36px;
+    }
+
+    .sk-tag {
+      width: 245px;
+      height: 32px;
+      border-radius: 999px;
+      margin-bottom: 22px;
+    }
+
+    .sk-h1-1 {
+      width: min(560px, 88%);
+      height: 36px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sk-h1-2 {
+      width: min(340px, 62%);
+      height: 36px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .sk-sub-1 {
+      width: min(520px, 84%);
+      height: 18px;
+      border-radius: 8px;
+      margin-bottom: 9px;
+    }
+
+    .sk-sub-2 {
+      width: min(360px, 64%);
+      height: 18px;
+      border-radius: 8px;
+    }
+
+    .sk-app-icon {
+      width: 108px;
+      height: 108px;
+      border-radius: 30px;
+      margin: 28px auto 22px;
+    }
+
+    .sk-btn {
+      width: 256px;
+      height: 58px;
+      border-radius: 18px;
+      margin-bottom: 14px;
+    }
+
+    .sk-meta {
+      width: 225px;
+      height: 16px;
+      border-radius: 8px;
+    }
+
+    .sk-card {
+      background: rgba(255, 255, 255, 0.56);
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      border-radius: 22px;
+      padding: 24px;
+      backdrop-filter: blur(18px);
+    }
+
+    .sk-card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+    }
+
+    .sk-card-h {
+      width: 64%;
+      height: 20px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .sk-line {
+      width: 100%;
+      height: 14px;
+      border-radius: 7px;
+      margin-bottom: 8px;
+    }
+
+    .sk-line.short {
+      width: 78%;
+    }
+
+    .sk-line.bn-line {
+      width: 88%;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+
+    .sk-steps {
+      margin-top: 30px;
+      background: rgba(255, 255, 255, 0.56);
+      border: 1.5px solid rgba(255, 255, 255, 0.85);
+      border-radius: 22px;
+      padding: 26px;
+      backdrop-filter: blur(18px);
+    }
+
+    .sk-steps-h {
+      width: min(310px, 75%);
+      height: 22px;
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+
+    /* =========================================================
+       REAL WEBSITE STYLES
+    ========================================================= */
     header {
       display: flex;
       justify-content: space-between;
@@ -174,7 +371,6 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: var(--shadow-glass);
-      animation: fadeSlideUp 0.6s ease both;
     }
 
     .brand {
@@ -215,7 +411,6 @@
     .hero {
       text-align: center;
       padding: 46px 16px 36px;
-      animation: fadeSlideUp 0.75s ease both;
     }
 
     .top-tag {
@@ -411,7 +606,6 @@
       grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
       gap: 20px;
       margin-top: 28px;
-      animation: fadeSlideUp 0.9s ease both;
     }
 
     .card {
@@ -479,7 +673,6 @@
       padding: 26px;
       backdrop-filter: blur(20px);
       box-shadow: var(--shadow-glass);
-      animation: fadeSlideUp 1.05s ease both;
     }
 
     .steps h2 {
@@ -539,7 +732,7 @@
     }
   </style>
 </head>
-<body>
+<body class="is-loading">
   <!-- Hidden Reusable MidMade App Icon Definition -->
   <svg width="0" height="0" style="position:absolute;visibility:hidden;" aria-hidden="true">
     <defs>
@@ -575,88 +768,170 @@
   <div class="orb orb-3"></div>
 
   <div class="container">
-    <header>
-      <a href="https://midmade.pages.dev/" class="brand" aria-label="MidMade Home">
-        <!-- App Icon Placed Right Before the Brand Name -->
-        <svg class="nav-app-icon" role="img" aria-label="MidMade App Icon">
-          <use href="#midmade-app-icon" />
-        </svg>
-        <span>MidMade</span>
-      </a>
-      <span class="ver-pill">Android • v1.0.0</span>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="top-tag">
-          <span class="pulse-dot"></span>
-          <span>Official Safe APK • Fast &amp; Ad-Free Ready</span>
+    <!-- =======================================================
+         SKELETON PLACEHOLDER (SHOWS WHILE PAGE IS LOADING)
+    ======================================================== -->
+    <div id="skeletonLoader" aria-hidden="true">
+      <div class="sk-header">
+        <div class="sk-brand-group">
+          <div class="sk-bone sk-logo"></div>
+          <div class="sk-bone sk-title-sm"></div>
         </div>
-        <h1>Save HD Videos &amp; Watch with Pro Gestures</h1>
-        <p class="bn-sub">
-          যেকোনো সোশ্যাল ভিডিও লিংক থেকে দ্রুত HD ভিডিও ডাউনলোড করুন এবং বিল্ট-ইন স্মার্ট জেসচার প্লেয়ারে উপভোগ করুন।
-        </p>
+        <div class="sk-bone sk-pill"></div>
+      </div>
 
-        <!-- Larger MidMade App Icon Right Above Download Button -->
-        <div class="app-icon-showcase" title="MidMade Official Android App">
-          <svg role="img" aria-label="MidMade Official App Logo">
+      <div class="sk-hero">
+        <div class="sk-bone sk-tag"></div>
+        <div class="sk-bone sk-h1-1"></div>
+        <div class="sk-bone sk-h1-2"></div>
+        <div class="sk-bone sk-sub-1"></div>
+        <div class="sk-bone sk-sub-2"></div>
+        <div class="sk-bone sk-app-icon"></div>
+        <div class="sk-bone sk-btn"></div>
+        <div class="sk-bone sk-meta"></div>
+      </div>
+
+      <div class="grid">
+        <div class="sk-card">
+          <div class="sk-bone sk-card-icon"></div>
+          <div class="sk-bone sk-card-h"></div>
+          <div class="sk-bone sk-line"></div>
+          <div class="sk-bone sk-line short"></div>
+          <div class="sk-bone sk-line bn-line"></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-bone sk-card-icon"></div>
+          <div class="sk-bone sk-card-h"></div>
+          <div class="sk-bone sk-line"></div>
+          <div class="sk-bone sk-line short"></div>
+          <div class="sk-bone sk-line bn-line"></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-bone sk-card-icon"></div>
+          <div class="sk-bone sk-card-h"></div>
+          <div class="sk-bone sk-line"></div>
+          <div class="sk-bone sk-line short"></div>
+          <div class="sk-bone sk-line bn-line"></div>
+        </div>
+      </div>
+
+      <div class="sk-steps">
+        <div class="sk-bone sk-steps-h"></div>
+        <div class="sk-bone sk-line"></div>
+        <div class="sk-bone sk-line"></div>
+        <div class="sk-bone sk-line short"></div>
+      </div>
+    </div>
+
+    <!-- =======================================================
+         REAL WEBSITE CONTENT (REVEALS SMOOTHLY ON LOAD)
+    ======================================================== -->
+    <div id="realContent">
+      <header>
+        <a href="https://midmade.pages.dev/" class="brand" aria-label="MidMade Home">
+          <!-- App Icon Placed Right Before the Brand Name -->
+          <svg class="nav-app-icon" role="img" aria-label="MidMade App Icon">
             <use href="#midmade-app-icon" />
           </svg>
-        </div>
+          <span>MidMade</span>
+        </a>
+        <span class="ver-pill">Android • v1.0.0</span>
+      </header>
 
-        <div class="cta-wrap">
-          <!-- ভবিষ্যতে GitHub Releases-এর আসল .apk লিংক নিচের href="#" এর জায়গায় বসিয়ে দেবে -->
-          <a id="apkBtn" href="#" class="btn-download" onclick="handleDownload(event)">
-            <span class="dl-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 3v13m0 0l-5-5m5 5l5-5M5 21h14"/>
-              </svg>
-            </span>
-            <span id="btnLabel">Download APK (v1.0.0)</span>
-          </a>
-          <span class="meta-info">Android 7.0+ • Compact Size • Direct Install</span>
-        </div>
-      </section>
+      <main>
+        <section class="hero">
+          <div class="top-tag">
+            <span class="pulse-dot"></span>
+            <span>Official Safe APK • Fast &amp; Ad-Free Ready</span>
+          </div>
+          <h1>Save HD Videos &amp; Watch with Pro Gestures</h1>
+          <p class="bn-sub">
+            যেকোনো সোশ্যাল ভিডিও লিংক থেকে দ্রুত HD ভিডিও ডাউনলোড করুন এবং বিল্ট-ইন স্মার্ট জেসচার প্লেয়ারে উপভোগ করুন।
+          </p>
 
-      <section class="grid" aria-label="MidMade Key Features">
-        <article class="card">
-          <div class="icon-box">⚡</div>
-          <h2>One-Tap HD Saver</h2>
-          <p>Paste any video link or share directly from your favorite social apps to save MP4 offline.</p>
-          <small>লিংক পেস্ট অথবা সরাসরি শেয়ার করেই হাই-কোয়ালিটি ভিডিও ডাউনলোড।</small>
-        </article>
-        <article class="card">
-          <div class="icon-box">🎬</div>
-          <h2>Gesture HD Player</h2>
-          <p>Swipe for brightness &amp; volume, pinch-to-zoom, double-tap seek, draggable lock &amp; playlist card.</p>
-          <small>আঙুলের ইশারায় ব্রাইটনেস, সাউন্ড, জুম, স্ক্রিন লক ও প্লেলিস্ট কন্ট্রোল।</small>
-        </article>
-        <article class="card">
-          <div class="icon-box">🚀</div>
-          <h2>Lightweight &amp; Smooth</h2>
-          <p>Optimized specifically for modern Android phones with minimal storage footprint.</p>
-          <small>অল্প মেমোরি ও সুপার ফাস্ট পারফরম্যান্সের জন্য বিশেষভাবে তৈরি।</small>
-        </article>
-      </section>
+          <!-- Larger MidMade App Icon Right Above Download Button -->
+          <div class="app-icon-showcase" title="MidMade Official Android App">
+            <svg role="img" aria-label="MidMade Official App Logo">
+              <use href="#midmade-app-icon" />
+            </svg>
+          </div>
 
-      <section class="steps" aria-label="Installation Guide">
-        <h2>How to Install MidMade APK <span class="bn">(ইনস্টল করার নিয়ম)</span></h2>
-        <ol>
-          <li>Tap <strong>Download APK</strong> above to save the installer file. <span class="bn">(উপরের বাটনে ক্লিক করে APK ফাইলটি ডাউনলোড করুন।)</span></li>
-          <li>Open the downloaded file and allow <strong>"Install from unknown sources"</strong> if prompted. <span class="bn">(ফাইলটি ওপেন করে পারমিশন চাইলে Allow দিন।)</span></li>
-          <li>Launch <strong>MidMade</strong> and enjoy! <span class="bn">(অ্যাপ ওপেন করে ব্যবহার শুরু করুন।)</span></li>
-        </ol>
-      </section>
-    </main>
+          <div class="cta-wrap">
+            <!-- ভবিষ্যতে GitHub Releases-এর আসল .apk লিংক নিচের href="#" এর জায়গায় বসিয়ে দেবে -->
+            <a id="apkBtn" href="#" class="btn-download" onclick="handleDownload(event)">
+              <span class="dl-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3v13m0 0l-5-5m5 5l5-5M5 21h14"/>
+                </svg>
+              </span>
+              <span id="btnLabel">Download APK (v1.0.0)</span>
+            </a>
+            <span class="meta-info">Android 7.0+ • Compact Size • Direct Install</span>
+          </div>
+        </section>
 
-    <footer>
-      <p>© 2026 MidMade. All rights reserved. • Built for personal offline media playback.</p>
-    </footer>
+        <section class="grid" aria-label="MidMade Key Features">
+          <article class="card">
+            <div class="icon-box">⚡</div>
+            <h2>One-Tap HD Saver</h2>
+            <p>Paste any video link or share directly from your favorite social apps to save MP4 offline.</p>
+            <small>লিংক পেস্ট অথবা সরাসরি শেয়ার করেই হাই-কোয়ালিটি ভিডিও ডাউনলোড।</small>
+          </article>
+          <article class="card">
+            <div class="icon-box">🎬</div>
+            <h2>Gesture HD Player</h2>
+            <p>Swipe for brightness &amp; volume, pinch-to-zoom, double-tap seek, draggable lock &amp; playlist card.</p>
+            <small>আঙুলের ইশারায় ব্রাইটনেস, সাউন্ড, জুম, স্ক্রিন লক ও প্লেলিস্ট কন্ট্রোল।</small>
+          </article>
+          <article class="card">
+            <div class="icon-box">🚀</div>
+            <h2>Lightweight &amp; Smooth</h2>
+            <p>Optimized specifically for modern Android phones with minimal storage footprint.</p>
+            <small>অল্প মেমোরি ও সুপার ফাস্ট পারফরম্যান্সের জন্য বিশেষভাবে তৈরি।</small>
+          </article>
+        </section>
+
+        <section class="steps" aria-label="Installation Guide">
+          <h2>How to Install MidMade APK <span class="bn">(ইনস্টল করার নিয়ম)</span></h2>
+          <ol>
+            <li>Tap <strong>Download APK</strong> above to save the installer file. <span class="bn">(উপরের বাটনে ক্লিক করে APK ফাইলটি ডাউনলোড করুন।)</span></li>
+            <li>Open the downloaded file and allow <strong>"Install from unknown sources"</strong> if prompted. <span class="bn">(ফাইলটি ওপেন করে পারমিশন চাইলে Allow দিন।)</span></li>
+            <li>Launch <strong>MidMade</strong> and enjoy! <span class="bn">(অ্যাপ ওপেন করে ব্যবহার শুরু করুন।)</span></li>
+          </ol>
+        </section>
+      </main>
+
+      <footer>
+        <p>© 2026 MidMade. All rights reserved. • Built for personal offline media playback.</p>
+      </footer>
+    </div>
   </div>
 
   <div id="toast">✨ APK ফাইলটি আপলোড হচ্ছে — শীঘ্রই ডাউনলোড লিংক চালু হবে!</div>
 
   <script>
+    // Reveal real content once fonts, styles, and page resources finish loading
+    (function () {
+      const startTime = performance.now();
+      let revealed = false;
+
+      function showSiteContent() {
+        if (revealed) return;
+        revealed = true;
+        document.body.classList.remove('is-loading');
+      }
+
+      window.addEventListener('load', function () {
+        const elapsed = performance.now() - startTime;
+        // Keep shimmer visible briefly (min 550ms) so fast reloads feel smooth, not jarring
+        const wait = Math.max(0, 550 - elapsed);
+        setTimeout(showSiteContent, wait);
+      });
+
+      // Fallback safety timer on very slow connections
+      setTimeout(showSiteContent, 2200);
+    })();
+
     function handleDownload(e) {
       const btn = document.getElementById('apkBtn');
       const label = document.getElementById('btnLabel');
